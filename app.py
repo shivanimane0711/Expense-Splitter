@@ -30,7 +30,7 @@ def add_expense():
         return "All fields are required.", 400
 
     try:
-        amount = float(amount_text)
+        amount = round(float(amount_text), 2)
         people = int(people_text)
     except ValueError:
         return "Amount must be a number and people must be a whole number.", 400
@@ -41,7 +41,7 @@ def add_expense():
     if people < 1:
         return "Number of people must be at least 1.", 400
 
-    share = amount / people
+    share = round(amount / people, 2)
 
     expenses.append(
         {
