@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature/improve-expense-validation
   pull_request:
     branches:
       - main
@@ -63,16 +64,3 @@ jobs:
       - name: Stop container
         if: always()
         run: docker rm -f expense-splitter
-
-  deploy:
-    name: Deploy to Render
-    needs: docker-build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Trigger Render deployment
-        run: |
-          curl --fail --silent --show-error \
-            -X POST \
-            "${{ secrets.RENDER_DEPLOY_HOOK }}&ref=${{ github.sha }}"
