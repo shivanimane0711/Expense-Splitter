@@ -155,11 +155,12 @@ The `/health` endpoint is used to verify that the deployed application is runnin
 
 ### GitHub Repository
 
-https://github.com/shivanimane0711/Expense-Splitter
+https://github.com/shivanimane0711/Expense-Splitter/tree/main
 
 ### GitHub Actions
 
 https://github.com/shivanimane0711/Expense-Splitter/actions
 
 ### Live Application
+
 https://expense-splitter-1-aoop.onrender.com
